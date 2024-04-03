@@ -10,7 +10,7 @@ from openai import OpenAI
 #   On windows: 
 #     openai-env\Scripts\activate
 #   On macOS or Unix: 
-#     
+#     source openai-env/bin/activate
 
 # Install openAI Python library:
 #     pip install --upgrade openai
