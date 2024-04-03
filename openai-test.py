@@ -1,4 +1,6 @@
 from openai import OpenAI
+from dotenv import load_dotenv
+import os
 # Create a virtual environment (recommended). This will make sure that packages are downloaded to
 #  the right place and there are no conflicts
 #   On the project terminal run: 
@@ -17,9 +19,12 @@ from openai import OpenAI
 
 # Include your API KEY:
 #  -Open the .env file in this folder and follow steps there
+#   -run the following command:
+#     pip install python-dotenv
 #   **Make sure that your .gitignore includes .env, as you do not want the api key to be included
 #     in version control
-client = OpenAI()
+load_dotenv()
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 #  -Defaults to getting the key using os.environ.get("OPENAI_API_KEY")
 #   if you saved the key under a different environment variable name, you can do something like:
 #   client = OpenAI(
